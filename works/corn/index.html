@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>穗序</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="corn.css?v=10">
+</head>
+<body>
+  <a class="skip" href="#field">跳到渐变</a>
+  <a class="out" href="../../index.html#stage">退出</a>
+  <main id="field" class="field" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="从暖土到灰蓝" aria-orientation="vertical">
+    <canvas id="wash"></canvas>
+    <div class="pigment" aria-hidden="true"><i id="notch"></i></div>
+    <div class="signs">
+      <img src="media/sign-stone.jpg" alt="一颗石头压着几株细草" width="1024" height="1365">
+      <img src="media/sign-ear.jpg" alt="穗从叶子里露出来" width="1024" height="1365" aria-hidden="true">
+      <img src="media/sign-cloth.jpg" alt="穗旁边挂着一块布" width="1024" height="1365" aria-hidden="true">
+      <img src="media/sign-paper.jpg" alt="穗旁边一张白纸，角上一点红" width="1024" height="1365" aria-hidden="true">
+    </div>
+    <div class="words">
+      <p class="kicker">穗序</p>
+      <h1 id="line" aria-live="polite">一颗石</h1>
+    </div>
+  </main>
+  <script src="corn.js?v=6"></script>
+</body>
+</html>
