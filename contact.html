@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="联系方式：游戏策划方向。">
+  <title>联系 · 个人网站</title>
+  <link rel="stylesheet" href="about.css?v=7">
+<link rel="stylesheet" href="sitenav.css?v=1">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+<div class="gnav" role="banner"><a class="gnav__logo" href="index.html">个人网站</a><div class="gnav__menu" role="navigation" aria-label="主导航"><a class="gnav__link" href="index.html">首页</a><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-works">作品</button><div class="gnav__panel" id="gnav-works"><a href="works/forge/index.html">九隅</a><a href="works/corn/index.html">穗序</a><a href="works/wool/index.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-process">设计迭代</button><div class="gnav__panel" id="gnav-process"><a href="process/index.html">总览</a><a href="process/forge.html">九隅</a><a href="process/corn.html">穗序</a><a href="process/wool.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-history">游戏经历</button><div class="gnav__panel" id="gnav-history"><a href="works/history/index.html">总览</a><a href="works/play/index.html">PlayStation</a><a href="works/xbox/index.html">Xbox</a><a href="works/nintendo/index.html">Nintendo</a><a href="works/steam/index.html">Steam</a></div></div><a class="gnav__link" href="download.html">下载</a><a class="gnav__link" href="contact.html" aria-current="page">联系</a></div></div>
+  <main id="main">
+    <section class="intro" aria-labelledby="contact-page-title"><div class="intro-copy">
+      <p class="eyebrow">CONTACT / 联系</p><h1 id="contact-page-title">联系我<span>。</span></h1>
+    </div><aside class="contact-card" aria-label="联系方式">
+      <p class="eyebrow">EMAIL · WECHAT</p>
+      <div class="contact-slot"><span>邮箱</span><ul class="mails">
+        <li><a href="mailto:u8078762@anu.edu.au">u8078762@anu.edu.au</a><button type="button" class="copy" data-copy="u8078762@anu.edu.au" aria-label="复制邮箱 u8078762@anu.edu.au">复制</button></li>
+        <li><a href="mailto:179714525@qq.com">179714525@qq.com</a><button type="button" class="copy" data-copy="179714525@qq.com" aria-label="复制邮箱 179714525@qq.com">复制</button></li>
+      </ul></div>
+      <div class="contact-slot wechat"><span>微信</span><figure class="qr"><img src="media/wechat-qr.jpg" alt="微信二维码，扫码添加好友" width="486" height="486" loading="lazy"><figcaption>扫码添加微信</figcaption></figure></div>
+      <div class="contact-bottom"><a class="to-download" href="download.html">想先试玩？去下载页 →</a></div>
+    </aside></section>
+  </main><footer><a class="site-name" href="index.html">个人网站</a><span>作品 · 过程 · 联系</span><a href="#main">回到顶部 ↑</a></footer>
+<script>
+document.querySelectorAll(".copy").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "已复制";
+    } catch {
+      btn.textContent = "复制失败";
+    }
+    setTimeout(() => { btn.textContent = "复制"; }, 1400);
+  });
+});
+</script>
+<script src="sitenav.js?v=1"></script>
+</body>
+</html>

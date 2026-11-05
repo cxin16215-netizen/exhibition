@@ -1,0 +1,45 @@
+body { margin: 0; background: #fff; color: #111; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
+.bar { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 4vw; }
+.brand { text-decoration: none; color: inherit; font-weight: 600; }
+.back { margin-left: auto; background: #107c10; color: #fff; text-decoration: none; border-radius: 999px; padding: 0.45rem 1rem; }
+.stage { background: #0e0e0e; color: #fff; padding: 7vh 6vw 5vh; }
+.stage h1 { margin: 0.2rem 0 0; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 600; letter-spacing: -0.03em; }
+.stage p { margin: 0.4rem 0 0; color: #bdbdbd; }
+.stage strong { color: #107c10; }
+.rail-wrap { padding: 1.2rem 4vw 0; }
+.rail-wrap h2, .list-wrap h2 { font-size: 0.95rem; font-weight: 500; }
+.rail { display: flex; gap: 0.7rem; overflow-x: auto; }
+.rail figure { margin: 0; flex: 0 0 148px; }
+.thumb { width: 148px; height: 84px; object-fit: cover; background: #d0d0d0; display: block; }
+.rail figcaption { font-size: 0.78rem; margin-top: 0.3rem; }
+.list-wrap { padding: 1rem 4vw 3rem; }
+.scroller { max-height: 62vh; overflow: auto; border-top: 1px solid #e5e5e5; }
+.row { display: grid; grid-template-columns: 96px 1fr auto; gap: 0.8rem; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #eee; }
+.row .thumb { width: 96px; height: 54px; }
+input { width: min(24rem, 100%); border: 0; border-bottom: 1px solid #ccc; padding: 0.4rem 0; font: inherit; }
+
+/* ---------- 页眉导航（Xbox） ---------- */
+.bar {
+  gap: .8rem 2rem;
+  padding: .85rem 4vw;
+  background: #101010;
+  color: #fff;
+  border-bottom: 3px solid #107c10;
+}
+.brand { display: inline-flex; align-items: center; gap: .65rem; font-weight: 600; letter-spacing: .08em; }
+.brand::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 3px solid #9bf00b; box-shadow: 0 0 10px rgba(155, 240, 11, .55); }
+.platform-nav { gap: .35rem; }
+.platform-nav a {
+  padding: .38rem .9rem;
+  border-radius: 4px;
+  background: #1f1f1f;
+  color: #d8d8d8;
+  font-size: .88rem;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 2px transparent;
+  transition: background .15s, box-shadow .15s, color .15s;
+}
+.platform-nav a:hover { color: #fff; box-shadow: inset 0 0 0 2px #9bf00b; }
+.platform-nav a[aria-current="page"] { background: #107c10; color: #fff; text-decoration: none; }
+.bar .site a { color: #d8d8d8; border-bottom: 2px solid transparent; padding: .15rem 0; transition: color .15s, border-color .15s; }
+.bar .site a:hover { color: #fff; border-color: #9bf00b; }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>游戏经历</title>
+  <link rel="stylesheet" href="history.css?v=11">
+<link rel="stylesheet" href="../../sitenav.css?v=1">
+</head>
+<body class="hub-page">
+<div class="gnav" role="banner"><a class="gnav__logo" href="../../index.html">个人网站</a><div class="gnav__menu" role="navigation" aria-label="主导航"><a class="gnav__link" href="../../index.html">首页</a><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-works">作品</button><div class="gnav__panel" id="gnav-works"><a href="../../works/forge/index.html">九隅</a><a href="../../works/corn/index.html">穗序</a><a href="../../works/wool/index.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-process">设计迭代</button><div class="gnav__panel" id="gnav-process"><a href="../../process/index.html">总览</a><a href="../../process/forge.html">九隅</a><a href="../../process/corn.html">穗序</a><a href="../../process/wool.html">栖金</a></div></div><div class="gnav__drop is-current"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-history">游戏经历</button><div class="gnav__panel" id="gnav-history"><a href="../../works/history/index.html" aria-current="page">总览</a><a href="../../works/play/index.html">PlayStation</a><a href="../../works/xbox/index.html">Xbox</a><a href="../../works/nintendo/index.html">Nintendo</a><a href="../../works/steam/index.html">Steam</a></div></div><a class="gnav__link" href="../../download.html">下载</a><a class="gnav__link" href="../../contact.html">联系</a></div></div>
+  <div class="lights" aria-hidden="true">
+    <i class="wash"></i>
+    <i class="ps"></i>
+    <i class="xb"></i>
+    <i class="nt"></i>
+    <i class="st"></i>
+    <i class="core"></i>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+  <header class="top">
+    <a class="brand" href="../history/index.html" aria-current="page">游戏经历</a>
+    <nav class="platform-nav" aria-label="游戏经历">
+      <a href="../play/index.html">PlayStation</a>
+      <a href="../xbox/index.html">Xbox</a>
+      <a href="../nintendo/index.html">Nintendo</a>
+      <a href="../steam/index.html">Steam</a>
+    </nav>
+    <span class="updated">更新日期 26.10.28</span>
+  </header>
+  <main>
+    <section class="hub-grid" aria-label="统计页面">
+      <a class="ps" href="../play/index.html"><strong>PlayStation</strong><span>ixozev</span></a>
+      <a class="xb" href="../xbox/index.html"><strong>Xbox</strong><span>JointedTitan311</span></a>
+      <a class="ns" href="../nintendo/index.html"><strong>Nintendo</strong><span>61 部作品</span></a>
+      <a class="st" href="../steam/index.html"><strong>Steam</strong><span>玩过的那些</span></a>
+    </section>
+    <section class="friends" aria-label="个人页面">
+      <p class="hint">点击下面文字前往个人页面</p>
+      <nav class="names">
+        <a class="ps" href="https://profile.playstation.com/ixozev" target="_blank" rel="noopener">PlayStation</a>
+        <a class="xb" href="https://www.xbox.com/en-US/play/user/JointedTitan311" target="_blank" rel="noopener">Xbox</a>
+        <div class="nt-wrap">
+          <span class="nt">Nintendo</span>
+          <button class="code" type="button">SW-5675-1232-8710</button>
+        </div>
+        <a class="st" href="https://steamcommunity.com/profiles/76561198808744131/" target="_blank" rel="noopener">Steam</a>
+      </nav>
+    </section>
+  </main>
+  <script>
+    const code = document.querySelector(".code");
+    const text = code.textContent;
+    code.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        code.classList.add("is-on");
+        window.setTimeout(() => code.classList.remove("is-on"), 1200);
+      } catch {
+        code.classList.remove("is-on");
+      }
+    });
+  </script>
+<script src="../../sitenav.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+:root {
+  color-scheme: light;
+  --paper: #efe6d2;
+  --ink: #1e1b18;
+  --red: #c8372d;
+  --ochre: #d9a03a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.4rem 0.7rem;
+}
+
+.skip:focus { top: 0.6rem; }
+
+.back {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  right: 1.2rem;
+  padding: 0.28rem 0.6rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+}
+
+.hero {
+  position: relative;
+  background: var(--paper);
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  position: absolute;
+  left: 5.5vw;
+  top: 7vh;
+  max-width: 16em;
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.42em;
+  font-size: 0.85rem;
+}
+
+h1 {
+  margin: 0.15rem 0 0;
+  font-weight: 900;
+  font-size: clamp(4.2rem, 11vw, 8.4rem);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+}
+
+.name {
+  display: inline-block;
+  margin: 0.7rem 0 0;
+  padding: 0.15rem 0.55rem 0.2rem;
+  background: var(--red);
+  color: var(--paper);
+  font-weight: 900;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  letter-spacing: 0.18em;
+}
+
+.line {
+  margin: 0;
+  padding: 1.3rem 6vw;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 900;
+  font-size: clamp(1.35rem, 2.6vw, 2.1rem);
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+}
+
+main article {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  min-height: 0;
+  background: var(--paper);
+  border-top: 10px solid var(--ink);
+}
+
+main article:nth-child(even) { grid-template-columns: 0.8fr 1.4fr; }
+main article:nth-child(even) img { order: 2; }
+
+main img { width: 100%; height: 100%; object-fit: cover; }
+
+main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.2rem 6vw 2.4rem;
+  background: var(--red);
+  color: var(--paper);
+}
+
+main h2 {
+  margin: 0 0 0.6rem;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+main p { margin: 0; max-width: 16em; font-size: 1.05rem; }
+
+.seeds {
+  padding: 2.6rem 4vw 2rem;
+  background: var(--paper);
+  border-top: 10px solid var(--ink);
+}
+
+.seeds h2 {
+  margin: 0 0 0.4rem;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: 0.08em;
+}
+
+.seeds ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seeds li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.seeds img {
+  width: min(100%, 9rem);
+  height: auto;
+}
+
+.seeds span {
+  margin-top: -0.2rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+}
+
+.queen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 6vw;
+  background: var(--ink);
+  color: var(--ochre);
+}
+
+.queen img { width: min(16rem, 42vw); }
+
+.queen p {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.2rem 6vw 1.6rem;
+  background: var(--paper);
+  border-top: 8px solid var(--red);
+}
+
+footer p { margin: 0; max-width: 28em; }
+
+footer a {
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+@media (max-width: 800px) {
+  .title { top: 4vh; left: 1rem; }
+  h1 { font-size: 3.4rem; }
+  main article,
+  main article:nth-child(even) { grid-template-columns: 1fr; }
+  main article:nth-child(even) img { order: 0; }
+  .seeds ul { grid-template-columns: repeat(4, 1fr); }
+  .queen { grid-template-columns: 1fr; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -3,27 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>羊毛</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Sans+SC:wght@400;500&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="wool.css">
-<style>.process-link{position:fixed;z-index:20;right:2rem;bottom:2rem;color:#f5eddf;background:#1b1714e8;padding:.8rem 1.1rem;border:1px solid #a99572;text-decoration:none;font-family:sans-serif;font-size:14px}.process-link:focus-visible{outline:3px solid white;outline-offset:4px}</style></head>
+  <title>栖金 · 小窝十二月起居注</title>
+  <meta name="description" content="栖金：多平台电商 × 生活模拟。龙娘搬进毛坯小窝，按月过完一年的日子。">
+  <link rel="stylesheet" href="../../media/fonts/fonts.css?v=1">
+  <link rel="stylesheet" href="wool.css?v=5">
+<link rel="stylesheet" href="../../sitenav.css?v=1">
+</head>
 <body>
-  <a class="out" href="../../index.html#stage">出门</a>
+  <a class="skip" href="#main">跳到正文</a>
+<div class="gnav" role="banner"><a class="gnav__logo" href="../../index.html">个人网站</a><div class="gnav__menu" role="navigation" aria-label="主导航"><a class="gnav__link" href="../../index.html">首页</a><div class="gnav__drop is-current"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-works">作品</button><div class="gnav__panel" id="gnav-works"><a href="../../works/forge/index.html">九隅</a><a href="../../works/corn/index.html">穗序</a><a href="../../works/wool/index.html" aria-current="page">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-process">设计迭代</button><div class="gnav__panel" id="gnav-process"><a href="../../process/index.html">总览</a><a href="../../process/forge.html">九隅</a><a href="../../process/corn.html">穗序</a><a href="../../process/wool.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-history">游戏经历</button><div class="gnav__panel" id="gnav-history"><a href="../../works/history/index.html">总览</a><a href="../../works/play/index.html">PlayStation</a><a href="../../works/xbox/index.html">Xbox</a><a href="../../works/nintendo/index.html">Nintendo</a><a href="../../works/steam/index.html">Steam</a></div></div><a class="gnav__link" href="../../download.html">下载</a><a class="gnav__link" href="../../contact.html">联系</a></div></div>
   <div class="lamp" id="lamp" aria-hidden="true"></div>
-  <div class="window" aria-hidden="true">
-    <i class="coin"></i>
-  </div>
-  <h1>羊<br>毛</h1>
-  <p class="burst" aria-hidden="true">已为您节省</p>
-  <pre class="receipt" id="receipt"></pre>
-  <div class="floor" aria-hidden="true">
-    <i><b>1</b></i><i><b>2</b></i><i><b>3</b></i><i><b>4</b></i>
-    <i><b>5</b></i><i><b>6</b></i><i><b>7</b></i><i><b>8</b></i>
-    <i><b>9</b></i><i><b>10</b></i><i><b>11</b></i><i><b>12</b></i>
-  </div>
-  <a class="process-link" href="../../process/index.html?project=wool#history">设计与迭代 ↗</a>
-  <script src="wool.js"></script>
+
+  <main id="main">
+    <!-- 开场 -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__kicker"><span class="stamp">制作中</span><span>多平台电商 × 生活模拟</span></p>
+        <h1 class="hero__title">栖金</h1>
+        <p class="hero__sub">小窝十二月起居注</p>
+        <p class="hero__lead">一月，龙娘搬进一间毛坯小窝。<br>她在七个平台比价下单，等包裹，拆箱，<br>把东西一格一格收好，再慢慢用掉。</p>
+        <p class="hero__note">策划目标：让比价、等待和使用共同构成生活选择。省下的钱有回响，已有物品和零订单也有自己的路线。</p>
+      </div>
+
+      <div class="parcel" aria-hidden="true">
+        <div class="parcel__box">
+          <i class="tape tape--v"></i>
+          <i class="tape tape--h"></i>
+          <span class="sticker">轻放</span>
+          <div class="label">
+            <p class="label__head"><span>栖金速递</span><b>No.0001</b></p>
+            <dl>
+              <div><dt>收件</dt><dd>龙娘</dd></div>
+              <div><dt>地址</dt><dd>毛坯小窝 · 一楼</dd></div>
+              <div><dt>内含</dt><dd><span id="contents">一年的日子</span><i class="caret"></i></dd></div>
+            </dl>
+            <i class="barcode"></i>
+            <p class="label__code">QJ 2026 0001 0712</p>
+          </div>
+        </div>
+        <div class="coin"><i></i></div>
+      </div>
+    </section>
+
+    <!-- 核心循环 -->
+    <section class="loop" aria-labelledby="loop-title">
+      <div class="section-head">
+        <p class="section-kicker">核心循环</p>
+        <h2 id="loop-title">一单的旅程</h2>
+      </div>
+      <ol class="route">
+        <li><b>比价下单</b><span>七个平台，商品、店铺、平台优惠按顺序结算</span></li>
+        <li><b>包裹送达</b><span>跨旬送达，等待本身也是节奏的一部分</span></li>
+        <li><b>收纳摆放</b><span>格子储物，把东西真正放进小窝</span></li>
+        <li><b>用掉</b><span>实际领取才能消耗；退款后重新检查任务</span></li>
+        <li><b>生活事件</b><span>省下的钱，接回日子里</span></li>
+      </ol>
+    </section>
+
+<section class="loop" aria-labelledby="planning-title"><div class="section-head"><p class="section-kicker">关键策划任务</p><h2 id="planning-title">把规则接回日子里</h2><p class="section-note">围绕经济系统、任务条件与月度节奏，处理同一个问题：玩家为什么要买，又能怎样选择。</p></div><ol class="route">
+<li><b>拆采购目标</b><span>从生活需求出发配置清单。修箱可买整套工具，也可组合替代材料；已有物品继续算数。</span></li>
+<li><b>统一结算口径</b><span>明确商品、店铺、平台优惠的顺序，纳入运费与拆单；现金和其他权益分别反馈。</span></li>
+<li><b>串物品状态</b><span>付款、送达、领取、消耗共同判定任务；退款后重检，避免未收货就能推进剧情。</span></li>
+<li><b>配置月度节奏</b><span>每月三旬，按采购、等待、使用安排事件。四月替代采购，六月比较方案，七月加入轻量交互。</span></li>
+<li><b>定义反馈边界</b><span>从全局最低价评级转向可解释的选择反馈。心愿保留自愿性，省钱也不靠强迫消费来证明。</span></li>
+</ol></section>
+<section class="loop" aria-labelledby="screens-title"><div class="section-head"><p class="section-kicker">原型画面</p><h2 id="screens-title">从手机，回到小窝</h2><p class="section-note">从手机下单，到东西真正进入房间。</p></div><figure><a href="media/prototype-shopping.webp" target="_blank" rel="noopener"><img src="media/prototype-shopping.webp" alt="栖金原型：手机购物界面、采购清单与剩余生活费" width="1920" height="1080" loading="lazy" style="max-width:100%;height:auto"></a><figcaption class="section-note">采购入口：把月度需求、平台活动和预算放进同一场选择。</figcaption></figure><figure><a href="media/prototype-room.webp" target="_blank" rel="noopener"><img src="media/prototype-room.webp" alt="栖金原型：龙娘站在毛坯小窝，任务纸显示采购进度" width="1920" height="1080" loading="lazy" style="max-width:100%;height:auto"></a><figcaption class="section-note">生活落点：物品最终进入房间、库存和使用事件，购物完成后仍有后续行为。</figcaption></figure><p class="section-note">策划判断与迭代过程见<a href="../../process/wool.html">本作设计记录</a>。</p></section>
+    <!-- 十二个格子 -->
+    <section class="months" aria-labelledby="months-title">
+      <div class="section-head">
+        <p class="section-kicker">按月推进 · 每月三旬</p>
+        <h2 id="months-title">十二个格子</h2>
+        <p class="section-note">1–7 月已接入，8–12 月还封着。</p>
+      </div>
+      <ol class="shelf">
+        <li class="open"><em>1</em><b>搬进小窝</b><span>毛坯房，第一次把采购、收货、摆放连起来</span></li>
+        <li class="open"><em>2</em><b>热饮与整理</b><span>已有的杯子也算数；舍不得扔的空白卡片</span></li>
+        <li class="open"><em>3</em><b>一单不下</b><span>把最好的那份藏起来，后来决定今天吃掉</span></li>
+        <li class="open"><em>4</em><b>修好箱子</b><span>替代材料、跨平台采购、可撤回的行李草案</span></li>
+        <li class="open"><em>5</em><b>做手工，办聚会</b><span>用真正领到的材料，作品不按花钱排好坏</span></li>
+        <li class="open"><em>6</em><b>精打细算</b><span>套装、拆单、等待与运费，都要走真实结账</span></li>
+        <li class="open"><em>7</em><b>夏天</b><span>6×5 便当摆放、饮品配方、可提示的饼干谜题</span></li>
+        <li class="sealed"><em>8</em><b>未拆封</b></li>
+        <li class="sealed"><em>9</em><b>未拆封</b></li>
+        <li class="sealed"><em>10</em><b>未拆封</b></li>
+        <li class="sealed"><em>11</em><b>未拆封</b></li>
+        <li class="sealed"><em>12</em><b>未拆封</b></li>
+      </ol>
+    </section>
+
+    <p class="sign">—— 龙娘的起居注，未完待续<a href="../../process/wool.html">看设计迭代记录 ↗</a></p>
+  </main>
+
+  <script src="wool.js?v=2"></script>
+<script src="../../sitenav.js?v=1"></script>
 </body>
 </html>

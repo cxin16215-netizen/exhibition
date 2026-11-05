@@ -3,98 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>策划 · 首页</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="index.css?v=4">
+  <title>个人网站 · 作品</title>
+  <meta name="description" content="三件作品：栖金 · 小窝十二月起居注，九隅 · 三消守线图志，穗序 · 玉米育种手记。">
+  <link rel="stylesheet" href="media/fonts/fonts.css?v=1">
+  <link rel="stylesheet" href="index.css?v=19">
+<link rel="stylesheet" href="sitenav.css?v=1">
 </head>
 <body>
   <a class="skip" href="#stage">跳到主要内容</a>
-  <header class="bar">
-    <a class="logo" href="#stage">策划</a>
-    <nav class="nav" aria-label="主导航">
-      <a href="#stage" aria-current="page">首页</a>
-      <div class="drop">
-        <button type="button" aria-expanded="false" aria-controls="work-menu">作品</button>
-        <div class="panel" id="work-menu">
-          <a href="works/wool/index.html">羊毛</a>
-          <a href="works/forge/index.html">消除工坊</a>
-          <a href="works/corn/index.html">穗序</a>
-        </div>
-      </div>
-      <a href="process/index.html">设计迭代</a>
-      <a href="#bands">关于</a>
-    </nav>
-  </header>
+<div class="gnav" role="banner"><a class="gnav__logo" href="index.html">个人网站</a><div class="gnav__menu" role="navigation" aria-label="主导航"><a class="gnav__link" href="index.html" aria-current="page">首页</a><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-works">作品</button><div class="gnav__panel" id="gnav-works"><a href="works/forge/index.html">九隅</a><a href="works/corn/index.html">穗序</a><a href="works/wool/index.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-process">设计迭代</button><div class="gnav__panel" id="gnav-process"><a href="process/index.html">总览</a><a href="process/forge.html">九隅</a><a href="process/corn.html">穗序</a><a href="process/wool.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-history">游戏经历</button><div class="gnav__panel" id="gnav-history"><a href="works/history/index.html">总览</a><a href="works/play/index.html">PlayStation</a><a href="works/xbox/index.html">Xbox</a><a href="works/nintendo/index.html">Nintendo</a><a href="works/steam/index.html">Steam</a></div></div><a class="gnav__link" href="download.html">下载</a><a class="gnav__link" href="contact.html">联系</a></div></div>
+  <main id="stage" class="works">
+    <h1 class="sr">策划作品</h1>
+    <p class="works__meta" aria-hidden="true"><span>作品</span><span>03</span><span>2026</span></p>
 
-  <main>
-    <section class="stage" id="stage" data-theme="wool" aria-roledescription="carousel" aria-label="作品">
-      <h1 class="sr">策划作品</h1>
-      <div class="slides">
-        <article class="slide is-on" data-theme="wool">
-          <p class="eyebrow">一年 · 七个平台</p>
-          <h2>羊毛</h2>
-          <a class="more" href="works/wool/index.html">了解更多</a>
-        </article>
-        <article class="slide" data-theme="forge">
-          <p class="eyebrow">九个世界</p>
-          <h2>消除工坊</h2>
-          <a class="more" href="works/forge/index.html">了解更多</a>
-        </article>
-        <article class="slide" data-theme="corn">
-          <p class="eyebrow">慢慢冷下去</p>
-          <h2>穗序</h2>
-          <a class="more" href="works/corn/index.html">了解更多</a>
-        </article>
-      </div>
-      <button class="arrow prev" type="button" aria-label="上一件">‹</button>
-      <button class="arrow next" type="button" aria-label="下一件">›</button>
-      <div class="progress" aria-hidden="true"><i></i></div>
-      <div class="thumbs">
-        <button type="button" class="is-on" aria-label="羊毛"></button>
-        <button type="button" aria-label="消除工坊"></button>
-        <button type="button" aria-label="穗序"></button>
-      </div>
-    </section>
-
-    <section class="bands" id="bands">
-      <article class="band band-wool">
-        <div class="band__card">
-          <h2><span>羊毛</span></h2>
-          <p class="lead">一年的大促，和一间会变的屋子。</p>
-          <p>平台说你省了多少，和你真正省下的，分成两列。</p>
-          <a class="more" href="works/wool/index.html">了解更多</a>
-        </div>
-      </article>
-      <article class="band band-forge">
-        <div class="band__card">
-          <h2><span>消除工坊</span></h2>
-          <p class="lead">同一次消除，三种战线。</p>
-          <p>自动火力、机关阵地、魔像培养。资源怎样成为战术，由职业决定。</p>
-          <a class="more" href="works/forge/index.html">了解更多</a>
-        </div>
-      </article>
-      <article class="band band-corn">
-        <div class="band__card">
-          <h2><span>穗序</span></h2>
-          <p class="lead">颜色慢慢冷下去。</p>
-          <p>停在你松手的地方。</p>
-          <a class="more" href="works/corn/index.html">了解更多</a>
-        </div>
-      </article>
-    </section>
+    <ol class="rows">
+      <li class="row row--forge">
+        <a href="works/forge/index.html">
+          <span class="row__deco" aria-hidden="true"><i class="s-circle"></i><i class="s-square"></i><i class="s-tri"></i></span>
+          <span class="row__no">01</span>
+          <span class="row__title"><span class="row__name">九隅</span><span class="row__sub">三消守线图志</span></span>
+          <span class="row__info"><span class="row__tags"><span class="row__tag">三消 × 战线策略</span></span><ul class="row__points"><li><b>核心循环</b><span>消除产出资源 → 建筑与职业响应 → 战线推进结算</span></li><li><b>构筑</b><span>开局自选元素配盘；三职业共用交换操作，资源分别转化为自动火力、机关阵地、魔像培养</span></li><li><b>战术层</b><span>敌人意图与增援倒计时可视，多目标优先级决策；碰撞、互斗、捕食等敌敌交互</span></li></ul></span>
+          <span class="row__go" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="row row--corn">
+        <a href="works/corn/index.html">
+          <span class="row__deco" aria-hidden="true"><i class="furrow"></i><i class="sun"></i></span>
+          <span class="row__no">02</span>
+          <span class="row__title"><span class="row__name">穗序</span><span class="row__sub">玉米育种手记</span></span>
+          <span class="row__info"><span class="row__tags"><span class="row__tag">遗传育种策略</span></span><ul class="row__points"><li><b>规则来源</b><span>以真实育种原理建模：风媒授粉定父母本、F1 杂种优势、F2 性状分离、回交</span></li><li><b>决策张力</b><span>当季口粮与留种二选一；地块环境改变表现型，隔离区保纯</span></li><li><b>信息设计</b><span>开局公开霜、旱、病害日历，把风险前置为规划问题</span></li></ul></span>
+          <span class="row__go" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="row row--wool">
+        <a href="works/wool/index.html">
+          <span class="row__deco" aria-hidden="true"><i class="dots"></i><svg class="coin" viewBox="0 0 200 210" focusable="false"><defs><radialGradient id="coin-face" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#fff7cc"/><stop offset=".35" stop-color="#f6cf5a"/><stop offset=".72" stop-color="#d89a1f"/><stop offset="1" stop-color="#8f5a0a"/></radialGradient><linearGradient id="coin-rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a6"/><stop offset=".45" stop-color="#d9a12a"/><stop offset=".7" stop-color="#8a5508"/><stop offset="1" stop-color="#e8b847"/></linearGradient><linearGradient id="coin-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a86d10"/><stop offset="1" stop-color="#5e3804"/></linearGradient><linearGradient id="coin-shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><clipPath id="coin-clip"><circle cx="100" cy="100" r="95"/></clipPath><path id="coin-ring" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/></defs><circle cx="100" cy="108" r="95" fill="url(#coin-side)"/><circle cx="100" cy="100" r="95" fill="url(#coin-rim)"/><circle cx="100" cy="100" r="93" fill="none" stroke="#7a4a06" stroke-width="3" stroke-dasharray="1.4 2.4" opacity=".55"/><circle cx="100" cy="100" r="84" fill="url(#coin-face)"/><circle cx="100" cy="100" r="84" fill="none" stroke="#fff2b0" stroke-width="1.6" opacity=".8"/><circle cx="100" cy="100" r="81.5" fill="none" stroke="#8a5508" stroke-width="1" opacity=".5"/><text class="coin-legend" font-size="10.5" letter-spacing="2.6"><textPath href="#coin-ring">栖金 · 小窝十二月起居注 · 栖金 · 小窝十二月起居注 ·</textPath></text><circle cx="100" cy="100" r="66" fill="none" stroke="#8a5508" stroke-width="1" opacity=".45"/><circle class="bead on" cx="100.00" cy="40.00" r="3.2"/><circle class="bead on" cx="130.00" cy="48.04" r="3.2"/><circle class="bead on" cx="151.96" cy="70.00" r="3.2"/><circle class="bead on" cx="160.00" cy="100.00" r="3.2"/><circle class="bead on" cx="151.96" cy="130.00" r="3.2"/><circle class="bead on" cx="130.00" cy="151.96" r="3.2"/><circle class="bead on" cx="100.00" cy="160.00" r="3.2"/><circle class="bead off" cx="70.00" cy="151.96" r="2.6"/><circle class="bead off" cx="48.04" cy="130.00" r="2.6"/><circle class="bead off" cx="40.00" cy="100.00" r="2.6"/><circle class="bead off" cx="48.04" cy="70.00" r="2.6"/><circle class="bead off" cx="70.00" cy="48.04" r="2.6"/><circle cx="100" cy="100" r="53" fill="none" stroke="#fff2b0" stroke-width="1" opacity=".55"/><g clip-path="url(#coin-clip)"><ellipse cx="70" cy="56" rx="46" ry="20" fill="#fff" opacity=".22" transform="rotate(-32 70 56)"/><rect class="coin-shine" x="-60" y="-20" width="50" height="240" fill="url(#coin-shine)"/></g></svg></span>
+          <span class="row__no">03</span>
+          <span class="row__title"><span class="row__name">栖金</span><span class="row__sub">小窝十二月起居注</span><span class="row__months" title="1–7 月已接入"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><em>1–7 月已接入</em></span></span>
+          <span class="row__info"><span class="row__tags"><span class="row__tag">多平台电商 × 生活模拟</span><span class="row__state">制作中</span></span><ul class="row__points"><li><b>核心循环</b><span>比价下单 → 物流送达 → 收纳摆放 → 消耗触发生活事件</span></li><li><b>系统</b><span>订单、包裹、库存、任务共用物品状态，支持替代采购、拆单与退款重检</span></li><li><b>经济</b><span>现金与权益分账结算，省钱反馈可追溯；零订单路线与超支均不设惩罚</span></li></ul></span>
+          <span class="row__go" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ol>
   </main>
 
-  <footer class="foot">
-    <nav aria-label="页脚">
-      <a href="works/wool/index.html">羊毛</a>
-      <a href="works/forge/index.html">消除工坊</a>
-      <a href="works/corn/index.html">穗序</a>
-    </nav>
-    <p><a href="process/index.html">查看设计过程与当前进度 ↗</a></p>
-    <p>策划 · 2026</p>
-  </footer>
-  <script src="index.js?v=3"></script>
+  <script src="index.js?v=7"></script>
+<script src="sitenav.js?v=1"></script>
 </body>
 </html>

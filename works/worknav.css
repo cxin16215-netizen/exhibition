@@ -1,0 +1,81 @@
+/* 作品页通用页眉：站点导航固定在最左，中间作品切换，右侧本作迭代记录 */
+.worknav {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem 1.6rem;
+  padding: .7rem 3vw;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: .86rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: .04em;
+}
+.worknav a { color: inherit; text-decoration: none; }
+.worknav a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.worknav__site { display: flex; gap: 1.1rem; padding-right: 1.5rem; border-right: 1px solid; }
+.worknav__site a { opacity: .72; transition: opacity .2s; }
+.worknav__site a:hover { opacity: 1; }
+.worknav__works { display: flex; gap: .4rem; }
+.worknav__works a { padding: .22rem .85rem; transition: background .2s, color .2s, transform .2s; }
+.worknav__more { margin-left: auto; font-size: .8rem; }
+
+/* 九隅：黑底 + 三原色底边 */
+.worknav--forge {
+  padding-bottom: calc(.7rem + 6px);
+  background:
+    linear-gradient(90deg, #e0251b 0 34%, #f2c230 34% 67%, #2f5fd0 67%) left bottom / 100% 6px no-repeat,
+    #0b0b0b;
+  color: #f3efe6;
+}
+.worknav--forge .worknav__site { border-color: rgba(243, 239, 230, .25); }
+.worknav--forge .worknav__works a { background: #f2c230; color: #0b0b0b; }
+.worknav--forge .worknav__works a:hover { background: #f3efe6; }
+.worknav--forge .worknav__works a[aria-current="page"] { background: #2f5fd0; color: #f3efe6; }
+.worknav--forge .worknav__more { display: inline-flex; align-items: center; gap: .5rem; }
+.worknav--forge .worknav__more::before { content: ""; width: .55rem; height: .55rem; background: #e0251b; }
+.worknav--forge .worknav__more:hover { color: #f2c230; }
+
+/* 穗序：奶油半透明 + 宋体 + 双线底边 */
+.worknav--corn {
+  background: rgba(239, 226, 196, .86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px double #24180f;
+  color: #24180f;
+}
+.worknav--corn .worknav__site { border-color: rgba(36, 24, 15, .3); }
+.worknav--corn .worknav__works a { font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif; font-weight: 600; border: 1px solid #24180f; }
+.worknav--corn .worknav__works a:hover { background: rgba(36, 24, 15, .08); }
+.worknav--corn .worknav__works a[aria-current="page"] { background: #24180f; color: #efe2c4; }
+.worknav--corn .worknav__more { text-decoration: underline; text-decoration-color: #c8372d; text-decoration-thickness: 2px; text-underline-offset: .35em; }
+
+/* 栖金：暗色小屋 + 封箱胶带底边 + 面单贴纸 */
+.worknav--wool {
+  padding-bottom: calc(.7rem + 7px);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .14) 0 2px, transparent 2px 9px) left bottom / 100% 7px no-repeat,
+    linear-gradient(rgba(232, 213, 168, .72), rgba(232, 213, 168, .72)) left bottom / 100% 7px no-repeat,
+    rgba(33, 24, 20, .9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f3e6cc;
+}
+.worknav--wool .worknav__site { border-color: rgba(243, 230, 204, .25); }
+.worknav--wool .worknav__works a { background: #f7f1e3; color: #2b2320; border-radius: 3px; box-shadow: 0 2px 0 rgba(0, 0, 0, .35); }
+.worknav--wool .worknav__works a:hover { transform: translateY(-1px) rotate(-1deg); }
+.worknav--wool .worknav__works a[aria-current="page"] { background: #f0c255; transform: rotate(-2deg); }
+.worknav--wool .worknav__more { color: #f0c255; }
+.worknav--wool .worknav__more:hover { color: #fff2c2; }
+
+@media (max-width: 720px) {
+  .worknav { gap: .5rem 1rem; padding-inline: 4vw; font-size: .8rem; }
+  .worknav__site { gap: .8rem; padding-right: 1rem; }
+  .worknav__works a { padding: .18rem .6rem; }
+  .worknav__more { margin-left: 0; }
+}

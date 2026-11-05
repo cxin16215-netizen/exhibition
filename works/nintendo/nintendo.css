@@ -1,0 +1,159 @@
+:root {
+  --red: #e60012;
+  --cyan: #00c3e3;
+  --ink: #1d1d1f;
+  --paper: #f4f2ee;
+  --line: #e4e0d8;
+  --muted: #7a7469;
+}
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+
+/* 顶栏 */
+.bar {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; align-items: center; gap: 1.4rem;
+  padding: .85rem 4vw;
+  background: rgba(255, 255, 255, .86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { text-decoration: none; font-weight: 500; letter-spacing: .14em; }
+.platform-nav a { opacity: .55; transition: opacity .2s; }
+.platform-nav a:hover, .platform-nav a[aria-current="page"] { opacity: 1; }
+.platform-nav a[aria-current="page"] { color: var(--red); text-decoration-thickness: 2px; }
+.back {
+  margin-left: auto;
+  padding: .4rem 1.05rem;
+  border: 2px solid var(--red);
+  border-radius: 999px;
+  color: var(--red);
+  text-decoration: none;
+  font-size: .88rem;
+  transition: background .2s, color .2s;
+}
+.back:hover { background: var(--red); color: #fff; }
+
+/* 主体 */
+.sheet { width: min(1200px, calc(100% - 8vw)); margin: 0 auto; padding: 3.4rem 0 4rem; }
+
+.head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 2rem; }
+h1 { margin: 0; color: var(--red); font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 700; line-height: .95; letter-spacing: -.01em; }
+.tally { display: flex; gap: 2.4rem; margin: 0; padding: 0; list-style: none; }
+.tally li { display: grid; gap: .2rem; }
+.tally strong { font-size: clamp(1.8rem, 3.6vw, 2.8rem); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.tally span { font-size: .78rem; letter-spacing: .14em; color: var(--muted); }
+
+.label { display: flex; align-items: center; gap: .7rem; margin: 3rem 0 1rem; font-size: .8rem; font-weight: 500; letter-spacing: .24em; color: var(--muted); }
+.label::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: var(--red); }
+.label:first-of-type { margin-top: 0; }
+
+/* 拼贴 */
+.feature {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 14px;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  aspect-ratio: 2 / 1;
+  border-radius: 14px;
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+  transition: transform .3s cubic-bezier(.2, .7, .1, 1), box-shadow .3s;
+}
+.card.big { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .72));
+  pointer-events: none;
+}
+.card figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0; z-index: 1;
+  display: grid;
+  gap: .15rem;
+  padding: .8rem .95rem .9rem;
+}
+.card b { font-size: .95rem; font-weight: 500; line-height: 1.35; }
+.card.big b { font-size: clamp(1.2rem, 2vw, 1.7rem); }
+.card small { font-size: .78rem; opacity: .85; font-variant-numeric: tabular-nums; }
+.card .rank {
+  position: absolute;
+  top: .7rem; left: .8rem; z-index: 1;
+  padding: .1rem .5rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .5);
+  font-size: .72rem;
+  font-variant-numeric: tabular-nums;
+}
+/* 没有图片时：红底大字 */
+.card.plain { background: linear-gradient(135deg, var(--red), #b8000e); }
+.card.plain::after { display: none; }
+.card.plain figcaption { inset: 0; align-content: end; }
+/* 选中框（致敬 Switch 主界面） */
+.card:hover { transform: translateY(-3px); box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--cyan), 0 14px 30px rgba(0, 0, 0, .18); }
+
+/* 其余作品：时长条 */
+.list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; margin: 0; padding: 0; list-style: none; }
+.list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .25rem 1rem;
+  align-items: baseline;
+  padding: .7rem 0 .65rem;
+  border-bottom: 1px solid var(--line);
+  font-size: .92rem;
+}
+.list small { justify-self: end; font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.list i { grid-column: 1 / -1; display: block; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.list i::after { content: ""; display: block; width: var(--w); height: 100%; background: var(--red); border-radius: inherit; }
+
+/* 浅尝：标签 */
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.tags li { padding: .35rem .85rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: .84rem; transition: border-color .2s, color .2s; }
+.tags li:hover { border-color: var(--red); color: var(--red); }
+
+#note { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .feature { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .list { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .feature { grid-template-columns: 1fr; }
+  .card.big { grid-column: auto; grid-row: auto; aspect-ratio: 2 / 1; }
+  .tally { gap: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
+
+/* ---------- 页眉导航（Nintendo） ---------- */
+.bar { gap: .8rem 2rem; padding: .85rem 4vw; border-top: 4px solid var(--red); }
+.brand { display: inline-flex; align-items: center; gap: .6rem; color: var(--red); font-weight: 700; }
+.brand::before { content: ""; width: .7rem; height: .7rem; border-radius: 50%; background: var(--red); }
+.platform-nav { gap: .4rem; }
+.platform-nav a {
+  padding: .35rem .95rem;
+  border-radius: 999px;
+  background: #f0eeea;
+  color: var(--ink);
+  font-size: .88rem;
+  text-decoration: none;
+  opacity: 1;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.platform-nav a:hover { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--cyan); }
+.platform-nav a[aria-current="page"] { background: var(--red); color: #fff; text-decoration: none; }
+.bar .site a { color: var(--ink); font-weight: 500; transition: color .2s; }
+.bar .site a:hover { color: var(--red); }

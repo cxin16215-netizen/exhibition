@@ -1,44 +1,29 @@
-if (location.search.includes("cover")) {
-  document.documentElement.classList.add("cover");
-}
-
-const lines = [
-  "平台说你省了多少",
-  "你真正省了多少",
-  "这两列不是同一个数",
-  "",
-  "七个平台",
-  "十二个月",
-  "一间会变的屋子",
-  "一枚旧金币",
-];
-
-const receipt = document.querySelector("#receipt");
-const text = lines.join("\n");
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (reduce) {
-  receipt.textContent = text;
-} else {
-  let index = 0;
-  const step = () => {
-    receipt.textContent = text.slice(0, index);
-    index += 1;
-    if (index <= text.length) {
-      window.setTimeout(step, text[index - 1] === "\n" ? 180 : 48);
-    }
-  };
-  step();
+/* 灯跟着鼠标走 */
+const lamp = document.getElementById("lamp");
+if (lamp && !reduce && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("pointermove", (e) => {
+    lamp.style.left = `${e.clientX}px`;
+    lamp.style.top = `${e.clientY}px`;
+  }, { passive: true });
 }
 
-const lamp = document.querySelector("#lamp");
-if (lamp && !reduce && window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      lamp.style.left = `${event.clientX}px`;
-      lamp.style.top = `${event.clientY}px`;
-    },
-    { passive: true }
-  );
+/* 面单「内含」轮流打字 */
+const slot = document.getElementById("contents");
+const items = ["一年的日子", "热水壶 ×1", "舍不得扔的空白卡片", "即食牛肉与配菜", "修箱子的替代材料", "做手工的材料包", "6×5 便当盒"];
+if (slot && !reduce) {
+  let i = 0;
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const run = async () => {
+    while (true) {
+      await wait(2200);
+      const cur = items[i];
+      for (let n = cur.length; n >= 0; n--) { slot.textContent = cur.slice(0, n); await wait(40); }
+      i = (i + 1) % items.length;
+      const next = items[i];
+      for (let n = 1; n <= next.length; n++) { slot.textContent = next.slice(0, n); await wait(85); }
+    }
+  };
+  run();
 }

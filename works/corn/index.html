@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>穗序</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="corn.css?v=11">
+  <title>穗序 · 育种玩法与关卡设计</title>
+  <link rel="stylesheet" href="../../media/fonts/fonts.css?v=1">
+  <link rel="stylesheet" href="corn.css?v=43">
+<link rel="stylesheet" href="../../sitenav.css?v=1">
 </head>
 <body>
   <a class="skip" href="#field">跳到渐变</a>
-  <a class="out" href="../../index.html#stage">退出</a>
-  <main id="field" class="field" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="从暖土到灰蓝" aria-orientation="vertical">
+<div class="gnav" role="banner"><a class="gnav__logo" href="../../index.html">个人网站</a><div class="gnav__menu" role="navigation" aria-label="主导航"><a class="gnav__link" href="../../index.html">首页</a><div class="gnav__drop is-current"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-works">作品</button><div class="gnav__panel" id="gnav-works"><a href="../../works/forge/index.html">九隅</a><a href="../../works/corn/index.html" aria-current="page">穗序</a><a href="../../works/wool/index.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-process">设计迭代</button><div class="gnav__panel" id="gnav-process"><a href="../../process/index.html">总览</a><a href="../../process/forge.html">九隅</a><a href="../../process/corn.html">穗序</a><a href="../../process/wool.html">栖金</a></div></div><div class="gnav__drop"><button class="gnav__btn" type="button" aria-expanded="false" aria-controls="gnav-history">游戏经历</button><div class="gnav__panel" id="gnav-history"><a href="../../works/history/index.html">总览</a><a href="../../works/play/index.html">PlayStation</a><a href="../../works/xbox/index.html">Xbox</a><a href="../../works/nintendo/index.html">Nintendo</a><a href="../../works/steam/index.html">Steam</a></div></div><a class="gnav__link" href="../../download.html">下载</a><a class="gnav__link" href="../../contact.html">联系</a></div></div>
+  <p class="status" id="status" aria-live="polite"></p>
+  <main id="field" class="field" tabindex="0" role="slider" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="第一章 · 把种子留下来" aria-label="选择章节" aria-orientation="vertical">
     <canvas id="wash"></canvas>
     <div class="pigment" aria-hidden="true"><i id="notch"></i></div>
     <div class="signs">
@@ -22,10 +22,98 @@
       <img src="media/sign-paper.jpg" alt="穗旁边一张白纸，角上一点红" width="1024" height="1365" aria-hidden="true">
     </div>
     <div class="words">
-      <p class="kicker">穗序</p>
-      <h1 id="line" aria-live="polite">一颗石</h1>
+      <p class="kicker">穗序 · 第一章</p>
+      <h1 id="line">把种子留下来</h1>
+    </div>
+    <button type="button" class="curl" id="dogear" aria-label="翻开封面"><img src="media/curl.png" alt=""></button>
+    <div class="leafbox" id="leafbox" hidden>
+      <button type="button" class="book-close" id="close-book" aria-label="关闭书页，返回最初封面">返回封面 ×</button>
+      <div class="under" id="under"></div>
+      <div class="sheet" id="sheet">
+        <div class="face front" id="front"></div>
+        <div class="face back" id="back" aria-hidden="true"></div>
+      </div>
+      <button type="button" class="edge fold" id="fold" aria-label="翻回"></button>
+      <button type="button" class="curl" id="onward" aria-label="往后翻" hidden><img src="media/curl.png" alt=""></button>
     </div>
   </main>
-  <script src="corn.js?v=6"></script>
+  <div id="chapters" hidden>
+    <div data-cover="0">
+<article><div class="folio solo illustrated"><p class="kicker">第一章 · 把种子留下来</p><figure class="page-illustration"><a href="media/prototype-prologue-dialogue.webp" target="_blank" rel="noopener"><img src="media/prototype-prologue-dialogue.webp" alt="序章实机 · 环境与人物演出" width="640" height="360" loading="lazy"></a><figcaption class="section-note">冬夜火塘、人物动作与对话演出，为留下种子的动机建立情境。</figcaption></figure><p class="line">一款历史题材的玉米育种原型。玩家种田、授粉、看收成，再把选出的种源带进下一季。</p><p class="line">策划重点是把遗传知识变成可操作的选择：种在哪里、和谁配、留下什么，怎样适应新的环境。</p></div></article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 逐季教学</p><figure class="page-illustration"><a href="media/prototype-ch1-wind.webp" target="_blank" rel="noopener"><img src="media/prototype-ch1-wind.webp" alt="第一章第二季实机：玉米田之间显示随风传粉关系" width="640" height="360" loading="lazy"></a><figcaption class="section-note">用风向与田地位置表达亲本关系，先让玩家看见配对，再逐步认识性状。</figcaption></figure><p class="line">先种植，再看风，再认识后代差异。用四季逐步引入机制，先让玩家看到结果，再解释背后的规则。</p><p class="line">每季粮食与下一季种源同时产出；教学围绕已有田地展开，控制操作和资源管理的学习负担。</p></div></article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 从知识到反馈</p><figure class="page-illustration"><a href="media/prototype-ch1-ranges.webp" target="_blank" rel="noopener"><img src="media/prototype-ch1-ranges.webp" alt="第一章原型：播种前预览后代可能出现的性状范围" width="640" height="360" loading="lazy"></a><figcaption class="section-note">育种前先看可能范围，实际结果到收获时揭晓，让预期与随机分离有所区分。</figcaption></figure><p class="line">把播种、授粉、季末揭晓和留种接成连续流程；用性状、收成与可见亲本关系解释玩家刚刚做出的选择。</p></div></article>
+    </div>
+    <div data-cover="1">
+<article><div class="folio solo illustrated"><p class="kicker">第二章 · 种子与地方</p><figure class="page-illustration"><a href="media/prototype-ch2-seedbag.webp" target="_blank" rel="noopener"><img src="media/prototype-ch2-seedbag.webp" alt="第二章原型：季末汇总全季收成，再统一打开种袋" width="640" height="360" loading="lazy"></a><figcaption class="section-note">季末先汇总全季收成，再统一打开种袋、按田挑穗，减少分散的确认步骤。</figcaption></figure><p class="line">向阳坡、河谷、山口的季长分别为4、3、2。高产晚熟的大穗，到了山口可能没有收成。</p><p class="line">以“让山口长出粮食”为长期目标，把熟期、产量和包被的取舍分成前四关教学，再进入可重复的定居段。</p></div></article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 随机与保底</p><figure class="page-illustration"><a href="media/prototype-ch2-selection.webp" target="_blank" rel="noopener"><img src="media/prototype-ch2-selection.webp" alt="第二章恢复版本实机：按田切换六株玉米结果，季末挑穗留种" width="640" height="360" loading="lazy"></a><figcaption class="section-note">粮食结算与种源选择处于同一流程，挑穗从第二关开放。</figcaption></figure><p class="line">每块田六株，收成按六株平均；季末从成熟株中挑穗，每季最多新增两袋，原有种源持续保留。</p><p class="line">教学保底限定在亲本可能产生的结果里；重复查看和读档不会刷新同季抽样，避免把选育变成反复重抽。</p></div></article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 有代价的改良</p><figure class="page-illustration"><a href="media/prototype-ch2-wild.webp" target="_blank" rel="noopener"><img src="media/prototype-ch2-wild.webp" alt="第二章原型：田缘野生种群与粮田分开操作" width="640" height="360" loading="lazy"></a><figcaption class="section-note">田缘种群与粮田分开操作，早熟来源和包被代价共同参与选育。</figcaption></figure><p class="line">野生种带来早熟，也带回难处理的壳。田缘有野生种就与它串粉，清掉后自家授粉，下一代才能继续分离与筛选。</p><p class="line">粮仓和可恢复的歉收季给尝试留空间。失败影响评价，玩家仍能带着种源继续种下去。</p></div></article>
+    </div>
+    <div data-cover="2">
+<article><div class="folio solo illustrated"><p class="kicker">第三章 · 玉米带</p><figure class="page-illustration"><a href="media/prototype-ch3-field.webp" target="_blank" rel="noopener"><img src="media/prototype-ch3-field.webp" alt="第三章第17关实机：风向日历、田间工人、目标和右侧行动栏" width="640" height="360" loading="lazy"></a><figcaption class="section-note">顶部公开风向与回合，右侧收拢目标、预告和操作，让种植布局与工人行动共用一张决策地图。</figcaption></figure><p class="line">在田间行动、育种实验和订单之间切换。工人走位、防治和授粉服务于同一个问题：怎样把想要的品系种出来、保到秋天。</p><p class="line">四幕17关逐步引入病菌抗性、片段剪接、杂交制种、母本胞质与种源多样性。</p></div></article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 递进与因果</p><figure class="page-illustration"><a href="media/prototype-ch3-lab.webp" target="_blank" rel="noopener"><img src="media/prototype-ch3-lab.webp" alt="第三章实验室实机：受体供体染色体、选中片段与拼接结果预览" width="640" height="360" loading="lazy"></a><figcaption class="section-note">把“得到哪些性状、丢掉哪些性状、花多少钱”放在剪接之前，支持比较和确认。</figcaption></figure><p class="line">每关围绕一个新问题，再把机制组合起来。用风向、敌人意图、行动预览与新机制图解，减轻反复阅读规则的负担。</p></div></article>
+    <article data-screenshot="prototype-ch3-orders.webp"><div class="folio solo"><p class="kicker">冬季订单</p><figure><a href="media/prototype-ch3-orders.webp" target="_blank" rel="noopener"><img src="media/prototype-ch3-orders.webp" alt="第三章原型：订单墙列出性状要求、试种结果与报酬" width="640" height="360" loading="lazy" style="max-width:100%;height:auto"></a><figcaption class="section-note">订单墙把性状要求、实际试种与报酬联系起来，为下一季育种和播种提供具体目标。</figcaption></figure></div></article>
+    <article data-screenshot="prototype-ch3-harvest.webp"><div class="folio solo"><p class="kicker">秋收验收</p><figure><a href="media/prototype-ch3-harvest.webp" target="_blank" rel="noopener"><img src="media/prototype-ch3-harvest.webp" alt="第三章原型：秋收界面汇总产量、订单兑现与品种表现" width="640" height="360" loading="lazy" style="max-width:100%;height:auto"></a><figcaption class="section-note">在收获界面汇总产量、订单兑现和品种表现，让玩家回看这一季的选择产生了什么结果。</figcaption></figure></div></article>
+    </div>
+    <div data-cover="3">
+      <article>
+        <div class="press lead">
+          <div class="cap">
+            <p class="kicker">穗序 · 第四章</p>
+            <p class="mark">田野女王</p>
+            <p class="stamp">策划任务 · 跨季决策</p>
+          </div>
+          <img class="chapter-lead-art" src="media/prototype-ch4-calendar.webp" alt="第四章实机：威胁日历与跨季种植规划" width="1600" height="900" loading="lazy">
+          <ul>
+            <li><b>核心循环</b>杂交种收一季粮，变杂二代，再回交给亲本。让增长来自杂交本身。</li>
+            <li><b>策略取舍</b>回交保等级；定种从一半等级起步，换来可持续播种的新组合。</li>
+            <li><b>关卡递进</b>8关从单机制走向混合威胁与性状订单；开局公开日历，鼓励提前造亲本。</li>
+          </ul>
+        </div>
+      </article><article><div class="folio solo illustrated"><p class="kicker">策划任务 · 目标与数值验证</p><figure class="page-illustration"><a href="media/prototype-ch4-fix.webp" target="_blank" rel="noopener"><img src="media/prototype-ch4-fix.webp" alt="第四章v7实机：选择空心性状，预览新品系等级和收粮" width="640" height="360" loading="lazy"></a><figcaption class="section-note">v7定种面板：回交拿回全部等级，定种保留一半等级、获得新性状组合；先预览，再确认。</figcaption></figure><p class="line">终关用“超级玉米”倒推亲本组合：大穗、双抗、早熟、耐旱，同时去掉硬壳。五季中既要养亲本，也要交当季订单。</p><p class="line">用搜索、对照与路线重放检查可达性和余量，再核对 Unity 实现。</p></div></article>
+      <article>
+        <div class="press bill">
+          <img src="ch4/media/ch4-intro-l1.png" alt="一只手把花粉从一株玉米刷到另一株，中间是粮袋和一株灰色的杂二代">
+          <div class="cap">
+            <h2>配和回交</h2>
+            <p class="say">父本留下。母本变成杂交种，这一季粮翻倍。季末它变成杂二代，交回亲本那一路。</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="press bill flip">
+          <img src="ch4/media/ch4-intro-l4.png" alt="带硬壳的野生穗往外掉籽，一只手从灰色的穗上取下硬壳">
+          <div class="cap">
+            <h2>硬壳</h2>
+            <p class="say">野生种来得及躲过霜，也带着硬壳，粮要减半。定种的时候不留它。</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="press bill">
+          <img src="ch4/media/ch4-intro-l8.png" alt="两株亲本中间授粉，右边长出红苞的大穗">
+          <div class="cap">
+            <h2>田野女王</h2>
+            <p class="say">大穗，金抗、赤抗、早熟、耐旱都在，没有硬壳。那一株是超级玉米。</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="press cast">
+          <h2>这一季的种子</h2>
+          <ul>
+            <li><img src="ch4/media/ch4-ear-hank.png" alt=""><span>汉克黄</span></li>
+            <li><img src="ch4/media/ch4-ear-old.png" alt=""><span>老种</span></li>
+            <li><img src="ch4/media/ch4-ear-leaming.png" alt=""><span>利明</span></li>
+            <li><img src="ch4/media/ch4-ear-wild.png" alt=""><span>野生</span></li>
+            <li><img src="ch4/media/ch4-ear-steppe.png" alt=""><span>草原种</span></li>
+            <li><img src="ch4/media/ch4-ear-white.png" alt=""><span>白马牙</span></li>
+            <li><img src="ch4/media/ch4-ear-queen.png" alt=""><span>金皇后</span></li>
+          </ul>
+          <div class="queen">
+            <img src="ch4/media/ch4-super-512.png" alt="红苞张开的金色玉米穗">
+            <p>超级玉米</p>
+          </div>
+        </div>
+      </article>
+    <article data-screenshot="prototype-ch4-backcross.webp"><div class="folio solo"><p class="kicker">回交前预览</p><figure><a href="media/prototype-ch4-backcross.webp" target="_blank" rel="noopener"><img src="media/prototype-ch4-backcross.webp" alt="第四章原型：回交前预览等级与收粮变化" width="640" height="360" loading="lazy" style="max-width:100%;height:auto"></a><figcaption class="section-note">把杂二代交回亲本系之前，先显示等级与收粮变化，比较眼前收益和下一季的增长。</figcaption></figure></div></article>
+    </div>
+  </div>
+  <script src="corn.js?v=32"></script>
+<script src="../../sitenav.js?v=1"></script>
 </body>
 </html>
